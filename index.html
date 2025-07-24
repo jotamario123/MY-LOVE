@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hoy te extrañe mucho sarita preciosa💘</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #ff69b4, #000000);
+      color: white;
+      font-family: 'Arial Rounded MT Bold', sans-serif;
+      text-align: center;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px #000;
+    }
+
+    p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .heart {
+      color: red;
+      font-size: 25px;
+      animation: floatHearts 6s infinite ease-in-out;
+      position: absolute;
+    }
+
+    button {
+      background-color: #ff1493;
+      border: none;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      margin-top: 20px;
+      box-shadow: 0 0 15px #fff;
+    }
+
+    button:hover {
+      background-color: #ff69b4;
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    img {
+      width: 300px;
+      height: auto;
+      border-radius: 20px;
+      border: 5px solid white;
+      box-shadow: 0 0 10px pink;
+    }
+
+    @keyframes floatHearts {
+      0% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Me hiciste mucha falta 💌</h1>
+  <p>Para: Sara, de tu proximo novio Mateo,
+    En tus ojos encuentro el brillo,
+    en tu sonrisa el paraíso,
+    mi corazón late con sigilo,
+    amarte es mi eterno compromiso.💖</p>
+
+  <button onclick="playMusic()">Te Quiero 💘</button>
+  <audio id="romanticSong" src="musica.mp3"></audio>
+
+  <div class="image-container">
+    <img src="Foto1.jpg" alt="Foto juntos">
+    <img src="Foto2.jpg" alt="Recuerdo bonito">
+  </div>
+
+  <script>
+    function playMusic() {
+      const audio = document.getElementById("romanticSong");
+      audio.play();
+    }
+
+    for (let i = 0; i < 20; i++) {
+      let heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.top = Math.random() * 100 + "vh";
+      heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+      document.body.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
